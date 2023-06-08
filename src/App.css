@@ -40,3 +40,28 @@ select{
   margin-top:15px ;
 
 }
+.list-item{
+  display:flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  width:500px;
+  height:70px; 
+  margin-top: 5px;
+}
+.list-item h6 {
+  padding-top: 25px;
+  padding-left: 12px;
+}
+.expenseIndicator{
+  display: block;
+  border-right: 4px solid red;
+  width:100px;
+  height: 47px;
+}
+.incomeIndicator{
+  display: block;
+  border-right: 4px solid green;
+  width: 100px;
+  height: 47px;
+
+}

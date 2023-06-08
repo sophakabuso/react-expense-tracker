@@ -7,7 +7,7 @@ function AddTransaction(props){
     const [amount, setAmount]=useState('');
     const [transactionType, setTransactionType]=useState('');
 
-
+  
     const add=(()=>{props.add( transactionItem, amount, transactionType);
 
     })
@@ -20,9 +20,9 @@ function AddTransaction(props){
             <input type="text" placeholder="Enter Amount"   onChange={(event)=> setAmount(event.target.value)}/><br/>
             <select onChange={(event)=> setTransactionType(event.target.value)}>
                 <option>Income</option>
-                <option>Exspense</option> 
+                <option>Expense</option> 
             </select><br/>
-            <button onclick={add}  >Add a transaction</button>
+            <button onClick={add}  >Add a transaction</button>
         </div>
     )
 }

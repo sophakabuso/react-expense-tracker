@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
-
+import Home from './components/Home';
+import DisplayTransaction from './components/DisplayTransaction';
 import AddTransaction from './components/Add';
 
 function App() {
@@ -11,10 +12,10 @@ function App() {
   const add = (transactionItem, amount, transactionType)=>{
     setTransactions((transactions)=>[...transactions,{transactionItem:transactionItem,amount:amount ,transactionType:transactionType }]);
     console.log(transactions);
-  };  
+  };   
   return (
     <div className="container-app">
-     <AddTransaction add={add}/>
+     <Home add={add} transactions={transactions}/>
     </div> 
   );
 }
