@@ -1,3 +1,5 @@
+import React from 'react';
+
 import AddTransaction from "./Add"
 import DisplayTransaction from "./DisplayTransaction"
 
