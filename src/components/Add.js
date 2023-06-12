@@ -16,8 +16,8 @@ function AddTransaction(props){
         <div>
             <h1>Add a new transaction</h1>
 
-            <input type="text" placeholder="Enter Amount" onChange={(event)=> setTransactionItem(event.target.value)}/><br/>
-            <input type="text" placeholder="Enter Amount"   onChange={(event)=> setAmount(event.target.value)}/><br/>
+            <input type="text" placeholder="Enter Name:" onChange={(event)=> setTransactionItem(event.target.value)}/><br/>
+            <input type="text" placeholder="Enter Amount:"   onChange={(event)=> setAmount(event.target.value)}/><br/>
             <select onChange={(event)=> setTransactionType(event.target.value)}>
                 <option>Income</option>
                 <option>Expense</option> 
