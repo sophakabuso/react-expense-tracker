@@ -9,8 +9,10 @@ function SignUp(){
     const [password, setPassword]= useState('');
 
     const register = (() => {
-        createUserWithEmailAndPassword(email, password).then(()=>{
+        createUserWithEmailAndPassword(auth, email, password).then(()=>{
+            alert("Registration Succes");
         }).catch((error)=>{
+            console.log(error.message)
 
         })
 
@@ -23,7 +25,7 @@ function SignUp(){
             <input type="text" placeholder="Enter Email" 
               onChange={(event)=>setEmail(event.target.value)}/><br></br>
             <input type="password" placeholder="Enter password"
-              onChange={(event)=>setEmail(event.target.value)} /><br></br><br></br>
+              onChange={(event)=>setPassword(event.target.value)} /><br></br><br></br>
             <button onClick={register}>Sign Up</button>
         </div>
 
