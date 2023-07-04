@@ -3,65 +3,64 @@
   padding: 0;
 
 }
-body{
-  background: color #f7f7f9;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+/* Modern dark color scheme */
+body {
+  background-color: #948b8b;
+  color: #f3f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-.container-app{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height:500px;
-  align-items: center;
+
+.container-app {
+  max-width: 1200px; /* Set a maximum width for the app */
+  margin: 0 auto; /* Center the app horizontally */
+  padding: 20px;
+}
+
+h1, h4, h6 {
+  color: #ffffff;
   
 }
-input{
-  width: 500px;
-  height: 50px;
-  background-color: aliceblue;
-  border: none;
-  padding-left: 15px;
-  margin-top: 5px;
 
-}
-button{
-  width: 300px;
-  height: 30px;
-  margin-left: 45px;
-  margin-top:4px;
-
-}
-select{
-  width:500px;
-  height:50px;
-  background-color:aliceblue;
-  border: none;
-  margin-top:15px ;
-
-}
-.list-item{
-  display:flex;
+.list-item {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background-color: whitesmoke;
-  width:500px;
-  height:70px; 
-  margin-top: 5px;
+  background-color: #282828;
+  padding: 10px;
+  margin-bottom: 10px;
 }
-.list-item h6 {
-  padding-top: 25px;
-  padding-left: 12px;
-}
-.expenseIndicator{
-  display: block;
-  border-right: 4px solid red;
-  width:100px;
-  height: 47px;
-}
-.incomeIndicato r{
-  display: block;
-  border-right: 4px solid green;
-  width: 100px;
-  height: 47px;
 
+.expenseIndicator {
+  width: 20px;
+  height: 20px;
+  background-color: #ff5252;
+}
+
+.incomeIndicator {
+  width: 20px;
+  height: 20px;
+  background-color: #33cc33;
+}
+
+input[type="text"], select {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  width: 100%; /* Make the input and select elements take up full width */
+}
+
+button {
+  background-color: #00bfff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+a {
+  color: #00bfff;
 }

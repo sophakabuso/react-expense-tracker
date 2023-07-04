@@ -1,4 +1,4 @@
-import  from "react";
+import React from "react";
 function NoPageFound(){
     return(
         <div>
