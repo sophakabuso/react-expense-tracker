@@ -1,17 +1,17 @@
 import React from 'react';
+import AddTransaction from './Add';
+import DisplayTransaction from './DisplayTransaction';
 
-import AddTransaction from "./Add"
-import DisplayTransaction from "./DisplayTransaction"
+function Home(props) {
+  return (
+    <div>
+      {/* Render the AddTransaction component and pass the add function as a prop */}
+      <AddTransaction add={props.add} />
 
-function Home (props){
-    return(
-        <div>
-            
-            <AddTransaction add={props.add}/>
-            <DisplayTransaction transactions={props.transactions}/>
-
-        </div>
-    )
+      {/* Render the DisplayTransaction component and pass the transactions as a prop */}
+      <DisplayTransaction transactions={props.transactions} />
+    </div>
+  );
 }
 
 export default Home;
