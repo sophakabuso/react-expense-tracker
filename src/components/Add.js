@@ -1,15 +1,27 @@
 import React from 'react';
 import { useState } from 'react';
+import {db} from '../config/firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 function AddTransaction(props) {
   const [transactionItem, setTransactionItem] = useState('');
   const [amount, setAmount] = useState('');
   const [transactionType, setTransactionType] = useState('');
 
-  const add = () => {
+  const add = (async() => {
     // Call the add function passed as props and pass the transaction details
-    props.add(transactionItem, amount, transactionType);
-  };
+
+     try {
+        const docRef = await addDoc(collection(db,"transactions"),{
+            transactionItem:transactionItem,
+            amount:amount,
+            transactionType:transactionType
+        });
+        alert("Add Succesful")
+    } catch (error) {
+        
+    }
+  });
 
   return (
     <div>
@@ -40,4 +52,3 @@ function AddTransaction(props) {
 }
 
 export default AddTransaction;
-;
