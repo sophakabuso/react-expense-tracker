@@ -64,3 +64,19 @@ button {
 a {
   color: #00bfff;
 }
+.showCurrency{
+ 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #282828;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.selectCurrecy{
+ width: 250px;
+}
+.seclectedFromCurrency{
+ width: 250px;
+}
+     

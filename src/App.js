@@ -10,6 +10,7 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import NoPageFound from './components/NoPageFound';
 import ForgotPassword from './components/ForgotPassword';
+import Currency from './components/Currency';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -67,9 +68,12 @@ function App() {
           <Route path="/forgotpassword">
             <ForgotPassword />
           </Route>
+          <Route path="/currency">
+            <Currency/>
+          </Route>
           <Route path="*">
             <NoPageFound />
-          </Route>
+          </Route> 
         </Switch>
       </div>
     </Router>
