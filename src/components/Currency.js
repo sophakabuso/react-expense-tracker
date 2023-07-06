@@ -32,9 +32,14 @@ function Currency() {
         });
     }
   }, [fromCurrency, toCurrency]);
-
+let toAmount, fromAmount;
   const currencyConverting = () => {
     // Currency conversion logic
+    fromAmount = amount;
+    toAmount = amount * exchangeRate;
+
+    setShowCurrency(toAmount)
+
   };
 
   return (
@@ -42,7 +47,7 @@ function Currency() {
       <div>
         <h4>Currency Converter</h4>
         <div className="showCurrency">
-          <h4>R1200</h4>
+          <h4>{showCurrency}</h4>
         </div>
         <input
           type="number"
@@ -51,14 +56,18 @@ function Currency() {
           onChange={(e) => setAmount(e.target.value)}
         />{" "}
         <br />
-        <select className="selectCurrency">
+        <select className="selectCurrency"
+                 onChange={(e)=> setFromCurrency(e.target.value)}
+        > 
           {currencyOptions.map((option) => (
-            <option key={option}>{option}</option>
+            <option >{option}</option>
           ))}
         </select>
-        <select className="selectCurrency" id="selectedFromCurrency">
+        <select className="selectCurrency" 
+        id="selectedFromCurrency"
+        onChange={(e)=> setToCurrency(e.target.value)}>
           {currencyOptions.map((option) => (
-            <option key={option}>{option}</option>
+            <option >{option}</option>
           ))}
         </select>{" "}
         <button onClick={currencyConverting}>Converter</button>
