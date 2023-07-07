@@ -2,13 +2,17 @@ import React from "react";
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../config/firebase";
 import { useState } from "react";
+import { UseSelector, useDispatch} from "react-redux";
+import { signUp } from "../authreducer/Auth";
 
 function SignUp() {
   // State variables for email and password
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const register = () => {
+  const dispatch = useDispatch()
+
+ /* const register = () => {
     // Create a user with email and password using Firebase authentication
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
@@ -17,7 +21,7 @@ function SignUp() {
       .catch((error) => {
         console.log(error.message);
       });
-  };
+  }*/
 
   return (
     <div>
@@ -37,7 +41,7 @@ function SignUp() {
       />
       <br></br>
       <br></br>
-      <button onClick={register}>Sign Up</button>
+      <button onClick={()=>dispatch(signUp(email,password))}>Sign Up</button>
     </div>
   );
 }
