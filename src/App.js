@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './config/firebase';
-import './App.css'
+import './App.css';
 
 import Home from './components/Home';
 import Login from './components/Login';
@@ -69,11 +69,11 @@ function App() {
             <ForgotPassword />
           </Route>
           <Route path="/currency">
-            <Currency/>
+            <Currency />
           </Route>
           <Route path="*">
             <NoPageFound />
-          </Route> 
+          </Route>
         </Switch>
       </div>
     </Router>

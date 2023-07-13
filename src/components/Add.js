@@ -26,8 +26,6 @@ function AddTransaction(props) {
   return (
     <div>
       <h1>Add a new transaction</h1>
-
-      {/* Input fields to enter transaction details */}
       <input
         type="text"
         placeholder="Enter Name:"
@@ -41,7 +39,6 @@ function AddTransaction(props) {
       />
       <br />
       <select onChange={(event) => setTransactionType(event.target.value)}>
-        {/* Dropdown to select transaction type */}
         <option>Income</option>
         <option>Expense</option>
       </select>

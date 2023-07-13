@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth} from '../config/firebase';
+import { useHistory } from 'react-router-dom';
 
 const auth = getAuth(); // Get the Firebase auth instance
 
@@ -10,13 +12,13 @@ export const authSlice = createSlice({
       email: '',
       password: ''
     },
-    registrationSuccess: false // Flag to indicate successful registration
+    
   },
   reducers: {
     signUp: (state, action) => {
       createUserWithEmailAndPassword(auth, action.payload.email, action.payload.password)
         .then(() => {
-          state.registrationSuccess = true; // Set the registrationSuccess flag
+          alert("Registration Success")
         })
         .catch((error) => {
           console.log(error.message);
@@ -25,8 +27,9 @@ export const authSlice = createSlice({
     signIn: (state, action) => {
       signInWithEmailAndPassword(auth, action.payload.email, action.payload.password)
         .then(() => {
-          state.user = { email: action.payload.email, password: action.payload.password };
-          state.loginSuccess = true; // Set the loginSuccess flag
+          const history = useHistory();
+          alert("Login Success")
+          history.pushState('/home');
         })
         .catch((error) => {
           console.log(error.message);

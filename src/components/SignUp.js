@@ -3,8 +3,9 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from "../config/firebase";
 import { useState } from "react";
 import { UseSelector, useDispatch} from "react-redux";
-import { signUp } from "../authreducer/Auth";
+import { signUp } from "../authrReducer/Auth";
 
+import auth from '../authReducer/auth';
 function SignUp() {
   // State variables for email and password
   const [email, setEmail] = useState('');
@@ -12,16 +13,6 @@ function SignUp() {
 
   const dispatch = useDispatch()
 
- /* const register = () => {
-    // Create a user with email and password using Firebase authentication
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        alert("Registration Success");
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  }*/
 
   return (
     <div>

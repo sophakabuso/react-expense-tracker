@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { signUp } from '../authreducer/Auth';
+import { signIn, signUp } from '../authReducer/auth';
+import {auth} from '../config/firebase';
 
 function Login() {
   const history = useHistory();
@@ -10,22 +11,7 @@ function Login() {
 
   const dispatch = useDispatch();
 
-  const registrationSuccess = useSelector((state) => state.auth.registrationSuccess);
-
-  useEffect(() => {
-    if (registrationSuccess) {
-      displaySuccessMessage();
-    }
-  }, [registrationSuccess]);
-
-  const displaySuccessMessage = () => {
-    alert('Registration Success');
-  };
-
-  const handleSignUp = () => {
-    dispatch(signUp({ email, password }));
-  };
-
+  
   return (
     <div className='container'>
       <h1>Login page</h1>
@@ -34,16 +20,19 @@ function Login() {
         type="text"
         placeholder="Enter Email"
         onChange={(e) => setEmail(e.target.value)}
-      />
+      />{" "}
+      <br></br> <br></br>
       <input
         type="password"
         placeholder="Enter Password"
         onChange={(e) => setPassword(e.target.value)}
       />
       <br /><br />
-      <button onClick={handleSignUp}>Sign Up</button>
+      <button onClick={()=> dispatch(signIn(email, password))}>Login</button>
       <br /><br />
-      {/* Rest of the code... */}
+
+      <link to="/signUp">Don't have an account : sign up</link>
+      
     </div>
   );
 }
