@@ -1,5 +1,4 @@
 
-Sure, here's a brief and concise README file for your React application:
 
 Expense Tracker App
 The Expense Tracker App is a web application built using React that allows users to track their financial transactions and manage their expenses.
